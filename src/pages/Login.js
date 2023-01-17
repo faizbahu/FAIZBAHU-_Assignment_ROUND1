@@ -58,13 +58,11 @@ function App() {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label>Username </label>
-          <input type="text" name="uname" required />
+          <input type="text" name="uname" required placeholder="Login"/>
           
         </div>
         <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
+          <input type="password" name="pass" required placeholder="Password"/>
           {renderErrorMessage("pass")}
           {renderErrorMessage("uname")}
         </div>
