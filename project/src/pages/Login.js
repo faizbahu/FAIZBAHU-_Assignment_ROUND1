@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Logo from "../images/trends.png";
 import "../css/style.css";
-
-function App() {
+import { Link } from "react-router-dom";
+import Dashboard from "./Dashboard.js"
+function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -11,7 +12,7 @@ function App() {
   const users = [
     {
       username: "test_user@meistery.net",
-      password: "trial_application",
+      password: "123",
     },
     {
       username: "test_user2@meistery.net",
@@ -79,10 +80,15 @@ function App() {
     <div className="app">
       <div className="login-form">
         <div className="title">
+          
           <img className="logo" src={Logo}></img>
         </div>
         {isSubmitted ? (
-          <div className="successfull">User is successfully logged in</div>
+          <div className="successfull">User is successfully logged in
+          <div>
+          <Link to='/dashboard'><button className="dashboard-button">Go to Dashboard</button></Link></div>
+          
+          </div>
         ) : (
           renderForm
         )}
@@ -91,4 +97,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
